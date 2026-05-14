@@ -1,0 +1,24 @@
+[workspace]
+channels = ["conda-forge", "bioconda", "pytorch"]
+name = "attsienv"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = ">=3.10"
+pip = "*"
+pytorch = ">=2.0"
+pandas = "*"
+numpy = "*"
+scipy = "*"
+scikit-learn = "*"
+matplotlib = "*"
+viennarna = "*"
+biopython = "*"
+fair-esm = "*"
+
+[pypi-dependencies]
+rna-fm = "*"
+tqdm = "*"
