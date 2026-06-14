@@ -4,7 +4,12 @@ os.environ["TF_CPP_MIN_LOG_LEVEL"]='3'
 import warnings
 warnings.filterwarnings('ignore')
 import torch
-device = torch.device("cuda:3" if torch.cuda.is_available() else "cpu")
+if torch.cuda.is_available():
+    device = torch.device("cuda:3")
+elif torch.backends.mps.is_available():
+    device = torch.device("mps")
+else:
+    device = torch.device("cpu")
 from torch import nn
 import numpy as np
 import pdb

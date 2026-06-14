@@ -40,9 +40,14 @@ print("Loading RNA-FM model...")
 model, alphabet = fm.pretrained.rna_fm_t12()
 batch_converter = alphabet.get_batch_converter()
 model.eval()
-device = "cuda" if torch.cuda.is_available() else "cpu"
-if not torch.cuda.is_available():
-    print("Warning: CUDA not available, using CPU")
+if torch.cuda.is_available():
+    device = "cuda"
+elif torch.backends.mps.is_available():
+    device = "mps"
+else:
+    device = "cpu"
+if device == "cpu":
+    print("Warning: CUDA/MPS not available, using CPU")
 model.to(device)
 print(f"RNA-FM loaded on {device}")
 

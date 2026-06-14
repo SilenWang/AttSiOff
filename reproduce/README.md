@@ -6,7 +6,8 @@ This directory contains scripts to reproduce training AttSiOff using the ENsiRNA
 
 - Pixi (https://pixi.sh)
 - Python 3.10+
-- CUDA-capable GPU (optional, for faster training)
+- CUDA-capable GPU (optional, for faster training on Linux)
+- Apple Silicon (MPS) for macOS training
 - ENsiRNA dataset (train_*.csv, valid_*.csv in ENsiRNA/ENsiRNA/dataset/)
 
 ## Steps
