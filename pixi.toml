@@ -1,0 +1,26 @@
+[workspace]
+channels = ["conda-forge", "bioconda", "pytorch"]
+name = "attsioff"
+platforms = ["linux-64", "osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+predict = "python predict.py"
+predict-help = "python predict.py --help"
+
+[dependencies]
+python = "3.9.*"
+pip = "*"
+pytorch = { version = ">=2.0", channel = "pytorch" }
+pandas = "*"
+numpy = ">=1.24,<2"
+scipy = "*"
+scikit-learn = "*"
+matplotlib = "*"
+viennarna = ">=2.6.4,<3"
+biopython = "*"
+fair-esm = "*"
+
+[pypi-dependencies]
+rna-fm = "*"
+tqdm = "*"
